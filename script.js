@@ -30,7 +30,6 @@ function draw() {
 	for (var i = 0; i < 12; i++) {
 		drawCharacter((t*10) % 280 + (i-1) * 280, 180);
 	}
-	console.log("fux");
     t++;
     setTimeout(draw, 10);
 }
