@@ -27,12 +27,12 @@ function drawImage(img, transx, transy, sclx, scly, rot) {
 
 function draw() {
 	ctx.clearRect(0, 0, canvas.width * 2.5, canvas.height * 2.5);
-	for (var j = 0; j < 10; j++) {
-		for (var i = 0; i < 12; i++) {
+	for (var j = 0; j < 8; j++) {
+		for (var i = 0; i < 20; i++) {
 			if (j % 2 == 0) {
 				drawCharacter((t*10) % 280 + (i-1) * 280, (j+1) * 230);
 			} else {
-				drawCharacter((t*10) % 280 + (i-8) * 280, (j+1) * 230);
+				drawCharacter((t*10) % 280 + (i-16) * 280, (j+1) * 230);
 			}
 		}
 		ctx.scale(-1, 1);
