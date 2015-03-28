@@ -48,12 +48,15 @@ function drawCharacter(x, y) {
 	drawImage(leg, x-70, y+30, 0.3, 0.3, t/2.);
 	drawImage(leg, x+90, y+30, 0.3, 0.3, (t+1)/2.);
     drawArm(x, y);
+    for (var i = 0; i < 100; i+=10) {
+        drawArm(x+i, y);
+    }
 }
 
 
 function drawArm(x, y) { // x, y of char center
     var arm = images['arm'];
-    drawImage(arm, x, y, .1, -.1, Math.PI);
+    drawImage(arm, x, y, .1, -.1, Math.PI*Math.sin(t));
 }
 
 draw();
