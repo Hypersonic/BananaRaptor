@@ -1,6 +1,8 @@
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
+var t = 0;
+
 var images = {
 };
 
@@ -31,6 +33,7 @@ function draw() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	drawCharacter(400, 400);
 	console.log("fux");
+    t++;
 }
 
 function drawCharacter(x, y) {
