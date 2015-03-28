@@ -17,15 +17,13 @@ function loadImages() {
 loadImages();
 
 function drawImage(img, transx, transy, sclx, scly, rot) {
+    ctx.save();
     ctx.translate(-img.width/2 * sclx, -img.height/2 * scly);
     ctx.translate(transx, transy);
     ctx.scale(sclx, scly);
     ctx.rotate(rot);
     ctx.drawImage(img, 0, 0);
-    ctx.scale(1/sclx, 1/scly);
-    ctx.rotate(-rot);
-    ctx.translate(-transx, -transy);
-    ctx.translate(img.width/2 * sclx, img.height/2 * scly);
+    ctx.restore();
     console.log("asdf");
 }
 
@@ -39,12 +37,12 @@ function draw() {
 
 function drawCharacter(x, y) {
 	var ban = images['banana'];
-	drawImage(ban, x, y, 0.2, 0.2, Math.PI/2);
+	drawImage(ban, x, y, 0.2, 0.2, 0);
 	var thl = images['thluffy'];
 	drawImage(thl, x-70, y-80, 0.08, 0.08, 0);
 	var leg = images['leg'];
-	drawImage(leg, x-190, y+130, 0.3, 0.3, t/2.);
-	drawImage(leg, x-40, y+130, 0.3, 0.3, (t+1)/2.);
+	drawImage(leg, x-70, y+30, 0.3, 0.3, t/2.);
+	drawImage(leg, x+90, y+30, 0.3, 0.3, (t+1)/2.);
 }
 
 draw();
