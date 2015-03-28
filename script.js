@@ -32,9 +32,10 @@ function draw() {
 			if (j % 2 == 0) {
 				drawCharacter((t*10) % 280 + (i-1) * 280, (j+1) * 230);
 			} else {
-				drawCharacter(canvas.width * 2.5 - ((t*10) % 280 + (i-1) * 280), (j+1) * 230);
+				drawCharacter((t*10) % 280 + (i-8) * 280, (j+1) * 230);
 			}
 		}
+		ctx.scale(-1, 1);
 	}
     t++;
     setTimeout(draw, 10);
