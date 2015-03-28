@@ -11,7 +11,6 @@ function loadImages() {
 	for (var i = 0; i < imgs.length; i++) {
 		images[imgs[i].id] = imgs[i];
 	}
-	console.log(images);
 }
 
 loadImages();
@@ -24,13 +23,11 @@ function drawImage(img, transx, transy, sclx, scly, rot) {
     ctx.rotate(rot);
     ctx.drawImage(img, 0, 0);
     ctx.restore();
-    console.log("asdf");
 }
 
 function draw() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	drawCharacter(400, 400);
-	console.log("fux");
     t++;
     setTimeout(draw, 10);
 }
@@ -47,16 +44,15 @@ function drawCharacter(x, y) {
 	}
 	drawImage(leg, x-70, y+30, 0.3, 0.3, t/2.);
 	drawImage(leg, x+90, y+30, 0.3, 0.3, (t+1)/2.);
-    drawArm(x, y);
-    for (var i = 0; i < 100; i+=10) {
-        drawArm(x+i, y);
+    for (var i = 0; i < 100; i+=20) {
+        drawArm(x+i, y-10);
     }
 }
 
 
 function drawArm(x, y) { // x, y of char center
     var arm = images['arm'];
-    drawImage(arm, x, y, .1, -.1, Math.PI*Math.sin(t));
+    drawImage(arm, x, y, .1, -.1, Math.sin(t/10));
 }
 
 draw();
