@@ -34,6 +34,7 @@ function draw() {
 	drawCharacter(400, 400);
 	console.log("fux");
     t++;
+    setTimeout(draw, 10);
 }
 
 function drawCharacter(x, y) {
@@ -41,6 +42,9 @@ function drawCharacter(x, y) {
 	drawImage(ban, x, y, 0.2, 0.2, Math.PI/2);
 	var thl = images['thluffy'];
 	drawImage(thl, x-70, y-80, 0.08, 0.08, 0);
+	var leg = images['leg'];
+	drawImage(leg, x-190, y+130, 0.3, 0.3, t/2.);
+	drawImage(leg, x-40, y+130, 0.3, 0.3, (t+1)/2.);
 }
 
 draw();
