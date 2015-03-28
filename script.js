@@ -15,28 +15,27 @@ function loadImages() {
 loadImages();
 
 function drawImage(img, transx, transy, sclx, scly, rot) {
-    ctx.translate(transx, transy);
+    ctx.translate(-img.width/2 * sclx, -img.height/2 * scly);
+    ctx.scale(sclx, scly);
     ctx.rotate(rot);
+    ctx.translate(transx, transy);
     ctx.drawImage(img, 0, 0);
-    ctx.rotate(-rot);
     ctx.translate(-transx, -transy);
-}
-
-var im = document.getElementById('velo');
-var rot = 0;
-
-function velo() {
-    drawImage(im, 0, 0, 1, 1, rot);
-    rot += 2;
-}
-
-im.onload = function() {
-    setInterval(velo, 10);
+    ctx.rotate(-rot);
+    ctx.scale(1/sclx, 1/scly);
+    ctx.translate(img.width/2 * sclx, img.height/2 * scly);
+    console.log("asdf");
 }
 
 function draw() {
-	drawCharacter(0, 0);
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	drawCharacter(200, 200);
+	console.log("fux");
 }
 
 function drawCharacter(x, y) {
+	var ban = images['banana'];
+	drawImage(ban, x, y, 0.3, 0.3, 0);
 }
+
+draw();
