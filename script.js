@@ -16,26 +16,26 @@ loadImages();
 
 function drawImage(img, transx, transy, sclx, scly, rot) {
     ctx.translate(-img.width/2 * sclx, -img.height/2 * scly);
+    ctx.translate(transx, transy);
     ctx.scale(sclx, scly);
     ctx.rotate(rot);
-    ctx.translate(transx, transy);
     ctx.drawImage(img, 0, 0);
-    ctx.translate(-transx, -transy);
-    ctx.rotate(-rot);
     ctx.scale(1/sclx, 1/scly);
+    ctx.rotate(-rot);
+    ctx.translate(-transx, -transy);
     ctx.translate(img.width/2 * sclx, img.height/2 * scly);
     console.log("asdf");
 }
 
 function draw() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	drawCharacter(200, 200);
+	drawCharacter(400, 400);
 	console.log("fux");
 }
 
 function drawCharacter(x, y) {
 	var ban = images['banana'];
-	drawImage(ban, x, y, 0.3, 0.3, 0);
+	drawImage(ban, x, y, 0.2, 0.2, Math.PI/2);
 }
 
 draw();
