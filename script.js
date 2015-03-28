@@ -41,8 +41,10 @@ function drawCharacter(x, y) {
 	var thl = images['thluffy'];
 	drawImage(thl, x-70, y-80, 0.08, 0.08, 0);
 	var leg = images['leg'];
-	drawImage(leg, x-70, y+30, 0.3, 0.3, t/2.);
-	drawImage(leg, x+90, y+30, 0.3, 0.3, (t+1)/2.);
+	for (var i = 0; i < 20; i+= 2) {
+		drawImage(leg, x-70, y+30, 0.3, 0.3, (t+i)/2.);
+		drawImage(leg, x+130, y+30, 0.3, 0.3, (t+i)/2.);
+	}
 }
 
 draw();
