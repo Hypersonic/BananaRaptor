@@ -1,10 +1,10 @@
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
+ctx.scale(0.4, 0.4);
 
 var t = 0;
 
-var images = {
-};
+var images = {};
 
 function loadImages() {
 	var imgs = $('img');
@@ -26,8 +26,11 @@ function drawImage(img, transx, transy, sclx, scly, rot) {
 }
 
 function draw() {
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	drawCharacter(400, 400);
+	ctx.clearRect(0, 0, canvas.width * 2.5, canvas.height * 2.5);
+	for (var i = 0; i < 12; i++) {
+		drawCharacter(t % 280 + (i-1) * 280, 400);
+	}
+	console.log("fux");
     t++;
     setTimeout(draw, 10);
 }
@@ -36,7 +39,7 @@ function drawCharacter(x, y) {
 	var ban = images['banana'];
 	drawImage(ban, x, y, 0.2, 0.2, 0);
 	var thl = images['thluffy'];
-	drawImage(thl, x-70, y-80, 0.08, 0.08, 0);
+	drawImage(thl, x+130, y-80, 0.08, 0.08, 0);
 	var leg = images['leg'];
 	for (var i = 0; i < 20; i+= 2) {
 		drawImage(leg, x-70, y+30, 0.3, 0.3, (t+i)/2.);
