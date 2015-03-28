@@ -39,6 +39,8 @@ function draw() {
 function drawCharacter(x, y) {
 	var ban = images['banana'];
 	drawImage(ban, x, y, 0.2, 0.2, Math.PI/2);
+	var thl = images['thluffy'];
+	drawImage(thl, x-70, y-80, 0.08, 0.08, 0);
 }
 
 draw();
