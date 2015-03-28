@@ -28,7 +28,7 @@ function drawImage(img, transx, transy, sclx, scly, rot) {
 function draw() {
 	ctx.clearRect(0, 0, canvas.width * 2.5, canvas.height * 2.5);
 	for (var i = 0; i < 12; i++) {
-		drawCharacter(t % 280 + (i-1) * 280, 400);
+		drawCharacter((t*10) % 280 + (i-1) * 280, 400);
 	}
 	console.log("fux");
     t++;
